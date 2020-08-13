@@ -4,12 +4,13 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
+require('dotenv').config();
 
 const tasksRouter = require('./routes/tasks.js');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://user:user@cluster0.8bzam.mongodb.net/todo-redux?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const corsOptions = {
   origin: 'http://localhost:3000',
