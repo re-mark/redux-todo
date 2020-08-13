@@ -9,7 +9,7 @@ const tasksRouter = require('./routes/tasks.js');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/todo-list', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://user:user@cluster0.8bzam.mongodb.net/todo-redux?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const corsOptions = {
   origin: 'http://localhost:3000',
